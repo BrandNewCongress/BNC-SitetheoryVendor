@@ -1,0 +1,4 @@
+services:
+#    bnc_shared_form.example:
+#        class: BNC\SharedFormBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
