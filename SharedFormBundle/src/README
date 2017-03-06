@@ -1,5 +1,0 @@
-To overwrite other the controllers of other bundles, simply add them to a src directory within the bundle, in a directory structure that resembles the main src directory. The files should be identical filename and namespace as the bundle you are overwriting, e.g.
-
-Templates/SitetheoryAdminBundle/src/Sitetheory/MenuBundle/Controller/MenuPrimaryController.php
-
-Ideally we could have put these in the Templates/SitetheoryAdminBundle/Controller/SitetheoryMenu directory, but Symfony won't let us register that directory for alternative controllers (presumably because it's already registered). So we put them in this alternative location.
