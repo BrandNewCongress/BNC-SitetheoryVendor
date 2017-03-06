@@ -1,0 +1,38 @@
+{
+    "name": "BNC-SitetheoryVendor",
+    "license": "Public",
+    "type": "project",
+    "description": "The shared BNC vendor files for the Sitetheory platform.",
+    "autoload": {
+      "psr-4": {
+        "": "src/",
+        "SymfonyStandard\\": "app/"
+      }
+    },
+    "require": {
+        "php": ">=7.0.0",
+        "symfony/symfony": "2.8.*",
+        "doctrine/orm": "~2.5",
+        "doctrine/dbal": "~2.5",
+        "doctrine/doctrine-bundle": "~1.6",
+        "doctrine/migrations": "~1.1",
+        "doctrine/doctrine-migrations-bundle": "~1.1",
+        "twig/extensions": "~1.3",
+        "symfony/assetic-bundle": "~2.8",
+        "symfony/swiftmailer-bundle": "~2.3",
+        "symfony/monolog-bundle": "~2.8",
+        "symfony/intl": "^3.1.3",
+        "sensio/distribution-bundle": "^4.0",
+        "sensio/framework-extra-bundle": "~3.0",
+        "sensio/generator-bundle": "~2.5",
+        "incenteev/composer-parameter-handler": "~2.1",
+        "aws/aws-sdk-php": "2.*",
+        "php-http/guzzle6-adapter": "^1.1",
+        "friendsofsymfony/oauth-server-bundle": "^1.5",
+        "hwi/oauth-bundle": "0.4.2",
+        "beberlei/DoctrineExtensions": "~1.0"
+    },
+    "require-dev": {
+        "sensio/generator-bundle": "~2.5"
+    }
+}

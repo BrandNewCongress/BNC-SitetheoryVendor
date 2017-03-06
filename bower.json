@@ -1,0 +1,21 @@
+{
+  "name": "BNC-SitetheoryVendor",
+  "homepage": "https://github.com/BrandNewCongress/BNC-SitetheoryVendor",
+  "authors": [
+    "Alex Gurrola <alexgurrola@gutensite.com>"
+    "Chadwick Meyer <chadwick@gutensite.com>"
+  ],
+  "description": "The shared BNC Vendor files for the Sitetheory platform.",
+  "main": "",
+  "license": "PUBLIC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "stratus": "*"
+  }
+}
