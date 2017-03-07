@@ -222,9 +222,7 @@
             $scope.response = '';
             // Success
             function successCallback(response) {
-                console.log('response: ', response);
                 if (response && response.status == 200) {
-                    console.log('success: ', response);
                     $scope.response = $scope.options.response.success;
                     $scope.status = 'success';
                     $scope.results = response.data;
