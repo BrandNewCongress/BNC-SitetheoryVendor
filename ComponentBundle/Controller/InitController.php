@@ -1,6 +1,6 @@
 <?php
 
-namespace BNC\SharedFormBundle\Controller;
+namespace BNC\ComponentBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Unique Controllers necessary for this template.
  * Class InitController
- * @package BNC\SharedFormBundle\Controller
+ * @package BNC\ComponentBundle\Controller
  */
 class InitController extends Controller
 {

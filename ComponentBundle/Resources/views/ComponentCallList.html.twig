@@ -1,0 +1,56 @@
+{% extends view.templates.shell %}
+
+{% block contentType %}
+
+    <div id="joinCall" class="fontSecondary">
+
+        {% if view.viewVersion.text is not empty %}
+            {# Allow Custom Text Above Form #}
+            {% autoescape false %}
+                {{ view.viewVersion.text }}
+            {% endautoescape %}
+            <br>
+            <hr>
+        {% endif %}
+
+        <p class="bodyLarge">Brand New Congress wants to recruit over 400 extraordinary ordinary
+            Americans to run for Congress in 2018. We need your help to find these people. Join us on one of the calls listed below to hear more about who we&#39;re looking for and how you can help.</p>
+
+        <md-list id="callList" layout-padding="" ng-cloak="" ng-controller="Api"
+                 options='{"url":"https://api.{{ environment.site.domainprimary }}","controller":"/conference-calls/upcoming{% if view.viewVersion.subtitle is not empty %}?name={{ view.viewVersion.subtitle|url_encode|replace({'%20': '+'}) }}{% endif %}", "onLoad": "fetch"}'>
+            <!-- Header -->
+            <div id="callListHeader">
+                <div hide-xs="" layout="row">
+                    <div flex="100" flex-sm="20" flex-gt-sm="15"></div>
+                    <div flex="100" flex-gt-sm="35" flex-sm="30"><h2>Date</h2></div>
+                    <div flex="100" flex-gt-xs="40"><h2>Time</h2></div>
+                    <div flex="100" flex-gt-xs="10"><h2>Joined</h2></div>
+                </div>
+                <h2 hide-gt-xs="">Scheduled Calls</h2></div>
+            <!-- Progress Bar -->
+            {% verbatim %}
+            <md-progress-linear ng-show="status == 'sending'"></md-progress-linear>
+            <md-list-item ng-if="!results.conferences.length" layout="row" layout-align="space-between center">
+                <div class="error" flex>There are no scheduled calls at this time.</div>
+            </md-list-item>
+            <!-- List Body with Repeating Rows -->
+            <md-list-item layout="row" layout-align="space-between center" layout-wrap="" layout-xs="column"
+                          ng-repeat="model in results.conferences">
+                <div class="action" flex="100" flex-gt-sm="15" flex-sm="20">
+                    <md-button aria-label="join" class="md-fab md-primary" href="{{ model.registrationLink }}">
+                        Join
+                    </md-button>
+                </div>
+                <div class="date" flex="100" flex-gt-sm="35" flex-sm="30">{{ model.date }}</div>
+                <div class="time" flex="100" flex-gt-xs="40">{{ model.time }}</div>
+                <div class="joined" flex="100" flex-gt-xs="10"><span
+                            hide-gt-xs="">Joined:</span> {{ model.currentSignups || "Be the First!" }}</div>
+            </md-list-item>
+            {% endverbatim %}
+
+        </md-list>
+
+    </div>
+
+{% endblock %}
+
