@@ -30,7 +30,7 @@ var cacheTime = cacheTime || '1';
 var cdn = '//bnc.sitetheory.net/';
 var relative = 'assets/1/0/bundles/';
 var bundle = 'sitetheorystratus/';
-var vendorBundle = 'sitetheorycore/';
+var vendorBundle = 'bnccore/';
 
 // Begin Config Object
 requirejs.config({

@@ -20,8 +20,8 @@
 
 // Define AMD, Require.js, or Contextual Scope
 (function (root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        define(['stratus', 'underscore', 'jquery', 'angular', 'angular-material', 'angular-sanitize', 'stratus.services.model', 'stratus.services.tracking'], factory);
+    if (typeof require === 'function') {
+        require(['stratus', 'underscore', 'jquery', 'angular', 'angular-material', 'angular-sanitize', 'stratus.services.model', '/assets/1/0/bundles/bnccore/js/services/tracking.min.js'], factory);
     } else {
         factory(root.Stratus, root._, root.$);
     }
@@ -222,25 +222,29 @@
             $scope.response = '';
             // Success
             function successCallback(response) {
-                if (response && (response.status === 200)) {
+                console.log('response: ', response);
+                if (response && response.status == 200) {
+                    console.log('success: ', response);
                     $scope.response = $scope.options.response.success;
                     $scope.status = 'success';
                     $scope.results = response.data;
                     if ($scope.options.redirect.url) {
                         // Get UTM Tracking Referral Code
-                        var refcode = '?refcode=' + $scope.customMethods.getRefcode();
+                        var refcode = '?refcode=' + $scope.tracking.getRefcode();
                         $window.location = $scope.options.redirect.url + refcode;
                     }
                 } else {
                     // @debug add response code
-                    $scope.response = $scope.options.response.error + ' [' + response.code + ': ' + response.data + ']';
+                    $scope.response = $scope.options.response.error;
+                        $scope.response += response ? ' [' + response.code + ': ' + response.data + ']' : ' ['+response.status+']';
                     $scope.status = 'error';
                 }
             }
 
             // Error
             function errorCallback(response) {
-                $scope.response = $scope.options.response.error + ' [' + response.code + ': ' + response.data + ']';
+                $scope.response = $scope.options.response.error;
+                $scope.response += response.code && response.data ? ' [' + response.code + ': ' + response.data + ']' : ' ['+response+']';
                 $scope.status = 'error';
             }
 
@@ -266,7 +270,6 @@
         // Signup Method
         $scope.send = function (form) {
 
-            console.log($scope.options.scrollTo);
             if ($scope.options.scrollTo && $($scope.options.scrollTo)) {
                 $('html,body').animate({
                     scrollTop: $($scope.options.scrollTo).offset().top + $scope.options.scrollToOffset
