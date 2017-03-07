@@ -29,7 +29,7 @@
             <!-- Progress Bar -->
             {% verbatim %}
             <md-progress-linear ng-show="status == 'sending'"></md-progress-linear>
-            <md-list-item ng-if="!results.conferences.length" layout="row" layout-align="space-between center">
+            <md-list-item ng-if="status == 'success' && !results.conferences.length" layout="row" layout-align="space-between center">
                 <div class="error" flex>There are no scheduled calls at this time.</div>
             </md-list-item>
             <!-- List Body with Repeating Rows -->
