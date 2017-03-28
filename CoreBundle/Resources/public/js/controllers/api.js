@@ -221,11 +221,6 @@
             $scope.status = 'sending';
             $scope.response = '';
 
-            // Validation
-            if(form.nomineeName == form.nominatorName) {
-                form.nomineeName.$setValidity('nominatorName', false);
-            }
-
             // Success
             function successCallback(response) {
                 if (response && response.status == 200) {
