@@ -10,6 +10,8 @@
 
  */
 
+// TODO: this needs to work with the new dynamic system of loading and merging config. There should probably be a generic loader in
+
 (function (root, factory) {
     if (typeof require === 'function') {
         require(['stratus'], factory);
@@ -21,7 +23,7 @@
     var componentLoader = {
         src: {
             'require': 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.3/require.min.js',
-            'config': 'https://bnc.sitetheory.net/assets/1/0/bundles/sitetheorycore/js/components/config.js'
+            'config': 'https://bnc.sitetheory.net/assets/1/0/bundles/sitetheorycore/js/boot/config.js'
         },
         loaded: []
     };

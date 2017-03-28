@@ -1,5 +1,17 @@
 {% extends view.templates.shell %}
 
+{# Load Custom BNC Vendor Stratus Config if we reference that (at the moment we are loading that in the BNC shell #}
+{#
+{% block script %}
+
+    {% javascripts '@BNCCoreBundle/Resources/public/js/boot/config.js' filter='?uglifyjs2' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    {{ parent() }}
+{% endblock script %}
+#}
+
 {% block contentType %}
 
     <div id="joinCall" class="fontSecondary">

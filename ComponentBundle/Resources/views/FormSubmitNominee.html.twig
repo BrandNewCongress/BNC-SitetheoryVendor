@@ -101,12 +101,12 @@ But it's not being used ATM because we haven't decided now to manage forms betwe
                         <div layout="column">
                             <md-input-container>
                                 <label md-no-float class="noFloat">Nominee's Name</label>
-                                <input name="nomineeName" ng-model="model.data.nomineeName" placeholder="" required>
-                                <div ng-messages="Nominate.nomineeName.$error" role="alert">
-                                    <div ng-message-exp="['required']">
-                                        Please enter a name.
-                                    </div>
+                                <input name="nomineeName" ng-model="model.data.nomineeName" placeholder="" required stratus-validate validate-invalid="[model.data.nominatorName]">
+                                <div ng-messages="Nominate.nomineeName.$error" ng-messages-multiple role="alert">
+                                    <div ng-message="required">Please enter a name.</div>
+                                    <div ng-message="validateInvalid">Please do not nominate yourself.</div>
                                 </div>
+
                             </md-input-container>
 
                             <md-input-container>
@@ -182,11 +182,10 @@ But it's not being used ATM because we haven't decided now to manage forms betwe
                         <div layout="column">
                             <md-input-container>
                                 <label md-no-float class="noFloat">Nominee's Email</label>
-                                <input name="nomineeEmail" type="text" ng-pattern="options.pattern.email" ng-model="model.data.nomineeEmail" placeholder="">
+                                <input name="nomineeEmail" type="text" ng-pattern="options.pattern.email" ng-model="model.data.nomineeEmail" placeholder="" stratus-validate validate-invalid="[model.data.nominatorEmail]">
                                 <div ng-messages="Nominate.nomineeEmail.$error" role="alert">
-                                    <div ng-message-exp="pattern">
-                                        Please enter a valid email.
-                                    </div>
+                                    <div ng-message="pattern">Please enter a valid email.</div>
+                                    <div ng-message="validateInvalid">Please do not nominate yourself.</div>
                                 </div>
                             </md-input-container>
 
