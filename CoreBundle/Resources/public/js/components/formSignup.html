@@ -1,12 +1,12 @@
-<form id="{{ $parent.options.id }}" name="Signup" ng-controller="Api" ng-submit="send('Signup') && tracking.send('SignupButton', 'click')"   ng-sanitize="true" options='{{ $parent.options }}' ng-class="status" class="positionAnchor" ng-cloak ng-cloak-reveal>
+<form id="{{ $parent.options.id }}" name="Signup" ng-controller="Api" ng-submit="send('Signup') && tracking.send('SignupButton', 'click')"   ng-sanitize="true" options='{{ $parent.options }}' ng-class="formSignup status" class="positionAnchor" ng-cloak ng-cloak-reveal>
     <input type="hidden" name="utmSource" ng-value="model.data.utmSource">
     <input type="hidden" name="utmMedium" ng-value="model.data.utmMedium">
     <input type="hidden" name="utmCampaign" ng-value="model.data.utmCampaign">
     <md-progress-circular md-mode="indeterminate" ng-show="status === 'sending'"></md-progress-circular>
     <p class="message" ng-show="response.length" ng-bind-html="response"></p>
 
-    <ul class="listInline divCenter fontSecondary" ng-show="status !== 'success'">
-        <li>
+    <div class="clearfix inputCollection" ng-show="status !== 'success'">
+        <div class="inputBlock">
             <md-input-container>
                 <label>Email</label>
                 <input name="email" type="email" ng-pattern="options.pattern.email" ng-model="model.data.email" required md-no-asterisk>
@@ -16,8 +16,8 @@
                     </div>
                 </div>
             </md-input-container>
-        </li>
-        <li>
+        </div>
+        <div class="inputBlock">
             <md-input-container>
                 <label>Zip</label>
                 <input name="zip" ng-pattern="options.pattern.zip" ng-model="model.data.zip" required md-no-asterisk>
@@ -27,9 +27,9 @@
                     </div>
                 </div>
             </md-input-container>
-        </li>
-        <li>
+        </div>
+        <div class="inputBlock">
             <button type="submit" class="btn formSubmit" ng-disabled="Signup.$invalid">{{ options.buttonText }}</button>
-        </li>
-    </ul>
+        </div>
+    </div>
 </form>
