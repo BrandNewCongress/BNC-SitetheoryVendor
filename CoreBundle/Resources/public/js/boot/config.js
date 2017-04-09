@@ -5,8 +5,7 @@ var vendorBundle = 'bnccore/';
 // Begin Config Object
 var config = function(boot) {
 
-    // TODO: update to live site
-    boot.host="//bnc.sitetheory.net";
+    boot.host="//brandnewcongress.org";
     boot.cdn="//cdn.sitetheory.io/";
     boot.relative="assets/1/0/bundles/";
     boot.bundle="sitetheorystratus/";
