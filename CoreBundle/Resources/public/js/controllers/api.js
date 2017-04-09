@@ -17,22 +17,26 @@
 
 // BNC Api Controller
 // --------------------------
-
+console.log('getting ready to load api.js factory');
 // Define AMD, Require.js, or Contextual Scope
 (function (root, factory) {
-    if (typeof require === 'function') {
-        require(['stratus', 'underscore', 'jquery', 'angular', 'angular-material', 'angular-sanitize', 'stratus.services.model', '/assets/1/0/bundles/bnccore/js/services/tracking.min.js'], factory);
+    if (typeof define === 'function' && define.amd) {
+        // TODO: remove jquery when we don't need it anymore
+        // define (instead of require), since we need this controller enabled whenever it's required in other controllers.
+        define(['stratus', 'underscore', 'jquery', 'angular', 'angular-material', 'angular-sanitize', 'stratus.services.model', 'stratus.services.tracking'], factory);
     } else {
         factory(root.Stratus, root._, root.$);
     }
 }(this, function (Stratus, _, $) {
-
+    console.log('api.js factory loaded');
     // Make Sure NG Sanitize is available (XSS)
     Stratus.Modules.ngSanitize=true;
 
     // This Controller handles simple element binding
     // for a single scope to an API Object Reference.
     Stratus.Controllers.Api = function ($scope, $element, $http, $attrs, $window, $interpolate, model, tracking) {
+
+        console.log('API Controller Loaded');
 
         var uid = _.uniqueId('api_');
         Stratus.Instances[uid] = $scope;
@@ -42,7 +46,7 @@
         $scope.tracking = new tracking;
 
         var host = window.location.hostname.split('.').reverse();
-        var tld = host[1]+'.'+host[0];
+        //var tld = host[1]+'.'+host[0];
 
 
         // Tracking

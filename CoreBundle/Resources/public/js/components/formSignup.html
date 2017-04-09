@@ -1,4 +1,4 @@
-<form id="{{ $parent.options.id }}" name="Signup" ng-controller="Api" ng-submit="send('Signup') && tracking.send('SignupButton', 'click')"   ng-sanitize="true" options='{{ $parent.options }}' ng-class="formSignup status" class="positionAnchor" ng-cloak ng-cloak-reveal>
+<form id="{{ $parent.options.id }}" name="Signup" ng-controller="Api" ng-submit="send('Signup') && tracking.send('SignupButton', 'click')"   ng-sanitize="true" options='{{ $parent.options }}' ng-class="status" class="formSignup positionAnchor" ng-cloak ng-cloak-reveal>
     <input type="hidden" name="utmSource" ng-value="model.data.utmSource">
     <input type="hidden" name="utmMedium" ng-value="model.data.utmMedium">
     <input type="hidden" name="utmCampaign" ng-value="model.data.utmCampaign">

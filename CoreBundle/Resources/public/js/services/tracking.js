@@ -53,6 +53,7 @@
                     }
                 };
                 this.send = function (category, action) {
+                    if(typeof ga !== "function") return false;
                     ga('send', 'event', category, action);
                     return true;
                 };
