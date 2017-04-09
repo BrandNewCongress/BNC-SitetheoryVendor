@@ -17,7 +17,7 @@
 
 // BNC Api Controller
 // --------------------------
-console.log('getting ready to load api.js factory');
+
 // Define AMD, Require.js, or Contextual Scope
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
@@ -28,15 +28,13 @@ console.log('getting ready to load api.js factory');
         factory(root.Stratus, root._, root.$);
     }
 }(this, function (Stratus, _, $) {
-    console.log('api.js factory loaded');
+
     // Make Sure NG Sanitize is available (XSS)
     Stratus.Modules.ngSanitize=true;
 
     // This Controller handles simple element binding
     // for a single scope to an API Object Reference.
     Stratus.Controllers.Api = function ($scope, $element, $http, $attrs, $window, $interpolate, model, tracking) {
-
-        console.log('API Controller Loaded');
 
         var uid = _.uniqueId('api_');
         Stratus.Instances[uid] = $scope;
