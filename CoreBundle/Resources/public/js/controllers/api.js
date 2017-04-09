@@ -23,11 +23,11 @@
     if (typeof define === 'function' && define.amd) {
         // TODO: remove jquery when we don't need it anymore
         // define (instead of require), since we need this controller enabled whenever it's required in other controllers.
-        define(['stratus', 'underscore', 'jquery', 'angular', 'angular-material', 'angular-sanitize', 'stratus.services.model', 'stratus.services.tracking'], factory);
+        define(['stratus', 'underscore', 'angular', 'angular-material', 'angular-sanitize', 'stratus.services.model', 'stratus.services.tracking'], factory);
     } else {
-        factory(root.Stratus, root._, root.$);
+        factory(root.Stratus, root._);
     }
-}(this, function (Stratus, _, $) {
+}(this, function (Stratus, _) {
 
     // Make Sure NG Sanitize is available (XSS)
     Stratus.Modules.ngSanitize=true;
@@ -271,11 +271,14 @@
         // Signup Method
         $scope.send = function (form) {
 
+            // TODO: replace this with a simple angular version
+            /*
             if ($scope.options.scrollTo && $($scope.options.scrollTo)) {
                 $('html,body').animate({
                     scrollTop: $($scope.options.scrollTo).offset().top + $scope.options.scrollToOffset
                 }, 500);
             }
+            */
 
             if (!$scope[form].$valid) {
                 $scope.response = $scope.options.response.invalid;
