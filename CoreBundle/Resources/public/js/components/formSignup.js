@@ -2,8 +2,8 @@
 // -----------------------
 /*
 
-<script src="https://brandnewcongress.org/assets/1/0/bundles/bnccore/js/boot/config.js">
-<script src="https://brandnewcongress.org/assets/1/0/bundles/sitetheorystratus/stratus/dist/boot.min.js">
+<script src="https://brandnewcongress.org/assets/1/0/bundles/bnccore/js/boot/config.js"></script>
+<script src="https://brandnewcongress.org/assets/1/0/bundles/sitetheorystratus/stratus/dist/boot.min.js"></script>
 <stratus-form-signup
      url="https://api.brandnewcongress.org"
      controller="/people"

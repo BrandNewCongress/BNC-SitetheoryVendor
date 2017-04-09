@@ -21,7 +21,6 @@
 // Define AMD, Require.js, or Contextual Scope
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
-        // TODO: remove jquery when we don't need it anymore
         // define (instead of require), since we need this controller enabled whenever it's required in other controllers.
         define(['stratus', 'underscore', 'angular', 'angular-material', 'angular-sanitize', 'stratus.services.model', 'stratus.services.tracking'], factory);
     } else {
