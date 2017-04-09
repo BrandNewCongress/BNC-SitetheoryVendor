@@ -18,14 +18,18 @@
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         var requirements = ['stratus', 'angular', 'stratus.controllers.api'];
+        // Temporarily Hard Coding this to internal template to avoid CORS issue
+        /*
         if (typeof document.cookie === 'string' && document.cookie.indexOf('env=') !== -1) {
             requirements.splice(1, 0, 'text!templates-form-signup');
         }
+        */
         define(requirements, factory);
     } else {
         factory(root.Stratus);
     }
-}(this, function (Stratus, Template) {
+//}(this, function (Stratus, Template) {
+}(this, function (Stratus) {
 
     // This component creates a form to submit nominations
     Stratus.Components.FormSignup = {
@@ -65,7 +69,10 @@
         },
         //templateUrl: Stratus.BaseUrl + requirejs.s.contexts._.config.paths['templates-form-signup']
 
-        template: (typeof Template === 'string') ? Template : '<form id="{{ $parent.options.id }}" name="Signup" ng-controller="Api" ng-submit="send(\'Signup\') && tracking.send(\'SignupButton\', \'click\')" ng-sanitize="true" options="{{ $parent.options }}" ng-class="status" class="positionAnchor" ng-cloak ng-cloak-reveal><input type="hidden" name="utmSource" ng-value="model.data.utmSource"> <input type="hidden" name="utmMedium" ng-value="model.data.utmMedium"> <input type="hidden" name="utmCampaign" ng-value="model.data.utmCampaign"><md-progress-circular md-mode="indeterminate" ng-show="status === \'sending\'"></md-progress-circular><p class="message" ng-show="response.length" ng-bind-html="response"></p><ul class="listInline divCenter fontSecondary" ng-show="status !== \'success\'"><li><md-input-container><label>Email</label><input name="email" type="email" ng-pattern="options.pattern.email" ng-model="model.data.email" required md-no-asterisk><div ng-messages="Signup.email.$error" role="alert"><div ng-message-exp="[\'required\', \'pattern\']">Please enter a valid email.</div></div></md-input-container></li><li><md-input-container><label>Zip</label><input name="zip" ng-pattern="options.pattern.zip" ng-model="model.data.zip" required md-no-asterisk><div ng-messages="Signup.zip.$error" role="alert"><div ng-message-exp="[\'required\', \'pattern\']">Please enter a valid zip code.</div></div></md-input-container></li><li><button type="submit" class="btn formSubmit" ng-disabled="Signup.$invalid">{{ options.buttonText }}</button></li></ul></form>'
+        // Temporarily Hard Coding this to internal template to avoid CORS issue
+        template: (typeof Template === 'string') ? Template : '<form class=positionAnchor id="{{ $parent.options.id }}"name=Signup ng-class="formSignup status"ng-cloak ng-cloak-reveal ng-controller=Api ng-sanitize=true ng-submit="send(\'Signup\') && tracking.send(\'SignupButton\', \'click\')"options="{{ $parent.options }}"><input name=utmSource type=hidden ng-value=model.data.utmSource> <input name=utmMedium type=hidden ng-value=model.data.utmMedium> <input name=utmCampaign type=hidden ng-value=model.data.utmCampaign><md-progress-circular md-mode=indeterminate ng-show="status === \'sending\'"></md-progress-circular><p class=message ng-bind-html=response ng-show=response.length><div class="clearfix inputCollection"ng-show="status !== \'success\'"><div class=inputBlock><md-input-container><label>Email</label><input name=email type=email md-no-asterisk ng-model=model.data.email ng-pattern=options.pattern.email required><div ng-messages=Signup.email.$error role=alert><div ng-message-exp="[\'required\', \'pattern\']">Please enter a valid email.</div></div></md-input-container></div><div class=inputBlock><md-input-container><label>Zip</label><input name=zip md-no-asterisk ng-model=model.data.zip ng-pattern=options.pattern.zip required><div ng-messages=Signup.zip.$error role=alert><div ng-message-exp="[\'required\', \'pattern\']">Please enter a valid zip code.</div></div></md-input-container></div><div class=inputBlock><button class="btn formSubmit"ng-disabled=Signup.$invalid type=submit>{{ options.buttonText }}</button></div></div></form>'
 
     };
+
+    angular.module('stratusApp').controller('Api', Stratus.Controllers.Api);
 }));
