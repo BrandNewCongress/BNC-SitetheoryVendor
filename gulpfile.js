@@ -27,16 +27,16 @@ var nullify = function (proto) {
 var location = {
     mangle: {
         core: [
-        ],
-        min: [
-        ]
-    },
-    preserve: {
-        core: [
             '*Bundle/Resources/**/*.js'
         ],
         min: [
             '*Bundle/Resources/**/*.min.js'
+        ]
+    },
+    preserve: {
+        core: [
+        ],
+        min: [
         ]
     },
     less: {
@@ -87,7 +87,6 @@ gulp.task('compress:mangle', ['clean:mangle'], function () {
     return gulp.src(_.union(location.mangle.core, nullify(location.mangle.min)), { base: '.' })
         .pipe(debug({ title: 'Mangle:' }))
         .pipe(uglify({
-            preserveComments: 'license',
             mangle: true
         }))
         .pipe(dest('.', { ext: '.min.js' }))

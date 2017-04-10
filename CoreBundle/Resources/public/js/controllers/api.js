@@ -1,21 +1,5 @@
 //     Stratus.Controllers.Api.js 1.0
-
-//     Copyright (c) 2016 by Sitetheory, All Rights Reserved
-//
-//     All information contained herein is, and remains the
-//     property of Sitetheory and its suppliers, if any.
-//     The intellectual and technical concepts contained herein
-//     are proprietary to Sitetheory and its suppliers and may be
-//     covered by U.S. and Foreign Patents, patents in process,
-//     and are protected by trade secret or copyright law.
-//     Dissemination of this information or reproduction of this
-//     material is strictly forbidden unless prior written
-//     permission is obtained from Sitetheory.
-//
-//     For full details and documentation:
-//     http://docs.sitetheory.io
-
-// BNC Api Controller
+//     BNC Api Controller
 // --------------------------
 
 // Define AMD, Require.js, or Contextual Scope
@@ -58,7 +42,6 @@
             var tc = ts * t;
             return b + c * (tc * ts + -5 * ts * ts + 10 * tc + -10 * ts + 5 * t);
         };
-
 
 
         // OPTIONS
@@ -172,7 +155,6 @@
         // DEFAULTS
         $scope.reset = function (form) {
 
-
             $scope.response = '';
             $scope.status = 'default';
             // Data Returned
@@ -184,7 +166,6 @@
                         if (v in $scope.model.data) $scope.model.data[v] = null;
                     });
                 } else if ('keep' in $scope.options.reset && $scope.options.reset.keep && $scope.options.reset.keep.length > 0) {
-                    // TODO: this is not keeping the fields like it should... it says that 'i' is not contained in the keep list despite console logs that show it does
                     _.each($scope.model.data, function (v, i) {
                         if (!_.contains($scope.options.reset.keep, i)) {
                             $scope.model.data[i] = null;
@@ -329,8 +310,6 @@
             }
         }
 
-
     };
-
 
 }));
