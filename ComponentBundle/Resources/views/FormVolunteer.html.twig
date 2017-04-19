@@ -12,7 +12,7 @@
 {# TODO: this ensures that the referrer is valid and we aren't inserting stuff into the page from the URL. In the future we should probably do a lookup on the api #}
 {% set validCandidates = {35723: 'Cori Bush'} %}
 {% set candidateReferrer = null %}
-{% if app.request.get('candidate') is not empty and validCandidates is defined and validCandidates[app.request.get('candidate')] is not empty %}
+{% if app.request.get('candidate') is not empty and validCandidates is defined and validCandidates[app.request.get('candidate')] is defined %}
     {% set candidateReferrer = validCandidates[app.request.get('candidate')] %}
 {% endif %}
 
