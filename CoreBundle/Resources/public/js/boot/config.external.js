@@ -1,17 +1,14 @@
-/*
-    Custom BNC Vendor Config
-
-    Location: @BNCCoreBundle/Resources/public/js/boot/config.js
-    Embed this script on any page in order to load Stratus. Based on the require config, Stratus will scan for supported
-components and load them on the page of any website.
-
-    // Load Custom Config (e.g. what's below) if you need it.
-    <script src="https://brandnewcongress.org/assets/1/0/bundles/bnccore/js/boot/config.external.js"></script>
-    // Load core stratus
-    <script src="https://brandnewcongress.org/assets/1/0/bundles/sitetheorystratus/stratus/dist/boot.min.js"></script>
-    // include component
-    <stratus-form-signup></stratus-form-signup>
-*/
+/**
+ * Custom BNC Vendor Config
+ * Location: @BNCCoreBundle/Resources/public/js/boot/config.js
+ * Embed this script on any page in order to load Stratus. Based on the config, Stratus will scan for supported
+ * components and load them on the page of any website. Load this custom require boot config first if you define custom
+ * paths to require.
+ *      <script src="https://brandnewcongress.org/assets/1/0/bundles/bnccore/js/boot/config.external.js"></script>
+ *      <script src="https://brandnewcongress.org/assets/1/0/bundles/sitetheorystratus/stratus/dist/boot.min.js"></script>
+ *      <stratus-form-signup></stratus-form-signup>
+ * @type {string}
+ */
 var vendorBundle = 'bnccore/';
 var config = function (boot) {
     // Deployment Customization for External Sites
