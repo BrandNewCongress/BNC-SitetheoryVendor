@@ -6,9 +6,9 @@
 components and load them on the page of any website.
 
     // Load Custom Config (e.g. what's below) if you need it.
-    <script src="https://brandnewcongress.org/assets/1/0/bundles/bnccore/js/boot/config.external.js">
+    <script src="https://brandnewcongress.org/assets/1/0/bundles/bnccore/js/boot/config.external.js"></script>
     // Load core stratus
-    <script src="https://brandnewcongress.org/assets/1/0/bundles/sitetheorystratus/stratus/dist/boot.min.js">
+    <script src="https://brandnewcongress.org/assets/1/0/bundles/sitetheorystratus/stratus/dist/boot.min.js"></script>
     // include component
     <stratus-form-signup></stratus-form-signup>
 */
