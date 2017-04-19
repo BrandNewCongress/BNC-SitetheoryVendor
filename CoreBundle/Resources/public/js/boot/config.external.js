@@ -6,7 +6,7 @@
 components and load them on the page of any website.
 
     // Load Custom Config (e.g. what's below) if you need it.
-    <script src="https://brandnewcongress.org/assets/1/0/bundles/bnccore/js/boot/config.js">
+    <script src="https://brandnewcongress.org/assets/1/0/bundles/bnccore/js/boot/config.external.js">
     // Load core stratus
     <script src="https://brandnewcongress.org/assets/1/0/bundles/sitetheorystratus/stratus/dist/boot.min.js">
     // include component
