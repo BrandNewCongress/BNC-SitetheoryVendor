@@ -1,4 +1,4 @@
-{% extends view.templates.shell %}
+{% extends content.templates.shell %}
 
 {# Load Custom BNC Vendor Stratus Config if we reference that (at the moment we are loading that in the BNC shell #}
 {#
@@ -16,10 +16,10 @@
 
     <div id="joinCall" class="fontSecondary">
 
-        {% if view.viewVersion.text is not empty %}
+        {% if content.version.text is not empty %}
             {# Allow Custom Text Above Form #}
             {% autoescape false %}
-                {{ view.viewVersion.text }}
+                {{ content.version.text }}
             {% endautoescape %}
             <br>
             <hr>
@@ -28,7 +28,7 @@
 
 
         <md-list id="callList" layout-padding="" ng-cloak="" ng-controller="Api"
-                 options='{"url":"https://api.{{ environment.site.domainprimary }}","controller":"/conference-calls/upcoming?name={% if view.viewVersion.subtitle is not empty %}{{ view.viewVersion.subtitle|url_encode|replace({'%20': '+'}) }}{% else %}General+Orientation+Call{% endif %}", "onLoad": "fetch"}'>
+             options='{"url":"https://api.{{ environment.site.domainprimary }}","controller":"/conference-calls/upcoming?name={% if content.version.subtitle is not empty %}{{ content.version.subtitle|url_encode|replace({'%20': '+'}) }}{% else %}General+Orientation+Call{% endif %}", "onLoad": "fetch"}'>
             <!-- Header -->
             <div id="callListHeader">
                 <div hide-xs="" layout="row">

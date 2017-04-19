@@ -1,4 +1,4 @@
-{% extends view.templates.shell %}
+{% extends content.templates.shell %}
 
 {# TODO: make CMS manage layout #}
 {# Hide sidebar on desktop #}
@@ -9,16 +9,31 @@
 {% block mainColumnGutter %}
 {% endblock mainColumnGutter %}
 
+{# TODO: this ensures that the referrer is valid and we aren't inserting stuff into the page from the URL. In the future we should probably do a lookup on the api #}
+{% set validCandidates = [35723 => 'Cori Bush'] %}
+{% set candidateReferrer = null %}
+{% if app.request.get('candidate') and is set validCandidates[app.request.get('candidate')] %}
+    {% set candidateReferrer = validCandidates[app.request.get('candidate')] %}
+{% endif %}
+
+
 {% block contentType %}
 
 
     <div class="fontSecondary" id="volunteerSkills">
+
         <div class="description">
 
-            {% if view.viewVersion.text is not empty %}
+            {% if candidateReferrer is not empty %}
+                <p class="candidateReferrer">
+                    Thank you for your interest in volunteering for {{ candidateReferrer }}.
+                </p>
+            {% endif %}
+
+            {% if content.version.text is not empty %}
                 {# Allow Custom Text Above Form #}
                 {% autoescape false %}
-                    {{ view.viewVersion.text }}
+                    {{ content.version.text }}
                 {% endautoescape %}
             {% else %}
                 <p class="pullout">Tell us all about yourself so we can get you plugged into the best teams.</p>

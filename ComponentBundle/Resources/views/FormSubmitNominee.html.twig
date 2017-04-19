@@ -1,4 +1,4 @@
-{% extends view.templates.shell %}
+{% extends content.templates.shell %}
 
 
 {# TODO: make CMS manage layout #}
@@ -33,10 +33,10 @@ But it's not being used ATM because we haven't decided now to manage forms betwe
 
 <div id="submitNominee" class="fontSecondary">
 
-    {% if view.viewVersion.text is not empty %}
+    {% if content.version.text is not empty %}
         {# Allow Custom Text Above Form #}
         {% autoescape false %}
-            {{ view.viewVersion.text }}
+            {{ content.version.text }}
         {% endautoescape %}
         <br>
     {% endif %}
