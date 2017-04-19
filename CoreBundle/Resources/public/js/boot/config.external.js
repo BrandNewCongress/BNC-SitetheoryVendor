@@ -2,11 +2,23 @@
     Custom BNC Vendor Config
 
     Location: @BNCCoreBundle/Resources/public/js/boot/config.js
-    This is the standard shared config for local Sitetheory based sites. There is a separate external config for use in
-    external sites.
+    Embed this script on any page in order to load Stratus. Based on the require config, Stratus will scan for supported
+components and load them on the page of any website.
+
+    // Load Custom Config (e.g. what's below) if you need it.
+    <script src="https://brandnewcongress.org/assets/1/0/bundles/bnccore/js/boot/config.js">
+    // Load core stratus
+    <script src="https://brandnewcongress.org/assets/1/0/bundles/sitetheorystratus/stratus/dist/boot.min.js">
+    // include component
+    <stratus-form-signup></stratus-form-signup>
 */
 var vendorBundle = 'bnccore/';
 var config = function (boot) {
+    // Deployment Customization for External Sites
+    boot.host = '//brandnewcongress.org';
+    boot.cdn = '//cdn.sitetheory.io/';
+    boot.relative = 'assets/1/0/bundles/';
+    boot.bundle = 'sitetheorystratus/';
     return {
 
         /* Vendor Custom Controllers */
