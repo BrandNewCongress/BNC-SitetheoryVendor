@@ -13,7 +13,7 @@
 }(this, function (Stratus, _) {
 
     Stratus.Services.Tracking = ['$provide', function ($provide) {
-        $provide.factory('tracking', function ($document, $window) {
+        $provide.factory('tracking', ['$document', '$window', function ($document, $window) {
             return function () {
 
                 this.parseURL = function (url) {
@@ -59,6 +59,6 @@
                 };
 
             };
-        });
+        }]);
     }];
 }));

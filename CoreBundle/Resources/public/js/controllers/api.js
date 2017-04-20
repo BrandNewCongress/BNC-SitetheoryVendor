@@ -17,7 +17,7 @@
 
     // This Controller handles simple element binding
     // for a single scope to an API Object Reference.
-    Stratus.Controllers.Api = function ($scope, $element, $http, $attrs, $window, $interpolate, model, tracking) {
+    Stratus.Controllers.Api = ['$scope', '$element', '$http', '$attrs', '$window', '$interpolate', 'model', 'tracking', function ($scope, $element, $http, $attrs, $window, $interpolate, model, tracking) {
 
         var uid = _.uniqueId('api_');
         Stratus.Instances[uid] = $scope;
@@ -310,6 +310,6 @@
             }
         }
 
-    };
+    }];
 
 }));
