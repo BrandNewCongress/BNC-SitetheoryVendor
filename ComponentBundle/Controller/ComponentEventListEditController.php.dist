@@ -1,0 +1,26 @@
+<?php
+
+namespace BNC\ComponentBundle\Controller;
+
+use Sitetheory\CoreBundle\Controller\Content\ContentEditController;
+use Sitetheory\CoreBundle\Controller\InitController;
+use Symfony\Component\HttpFoundation\Request;
+
+/**
+ * Extends the base controller for editing content to create a custom controller to overwrite the
+ * generic ContentEdit (even though we don't have a ContentType for ComponentEventListEdit or
+ * subscriptions)
+ *
+ * Class ComponentEventListEditController
+ * @package BNC\ComponentBundle\Controller
+ */
+class ComponentEventListEditController extends ContentEditController
+{
+    // If you need to customize
+    /* *
+    public function indexAction(Request $request, InitController $controller)
+    {
+        parent::indexAction($request, $controller);
+    }
+    /* */
+}

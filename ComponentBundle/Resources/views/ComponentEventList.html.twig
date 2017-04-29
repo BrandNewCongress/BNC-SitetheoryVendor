@@ -52,7 +52,7 @@
                 </div>
                 <div class="info" class="stGrid column45">
                     <div class="eventTitle"><em>{{ model.title }}</em></div>
-                    <div class="time">{{ model.startTime | date: 'MMM d @ h:mm a' }} - <span ng-if="(model.startTime | date: 'MMM d') != (model.endTime | date: 'MMM d')" class="newDay" >{{ model.endTime | date: 'MMM d' }}</span> {{ model.endTime | date: 'h:mm a' }}</div>
+                    <div class="time">{{ model.startTime | date: 'MMM d @ h:mm a' : model.timeZoneOffset }} - <span ng-if="(model.startTime | date: 'MMM d') != (model.endTime | date: 'MMM d')" class="newDay" >{{ model.endTime | date: 'MMM d' : model.timeZoneOffset }}</span> {{ model.endTime | date : 'h:mm a' : model.timeZoneOffset }}</div>
                 </div>
                 <div class="location" class="stGrid column40">
                     <div class="locationName"><em><a ng-href="https://www.google.com/maps/place/{{ model.venue.address.address1 + ', ' + model.venue.address.city + ', ' + model.venue.address.state + ', ' + model.venue.address.zip | encodeURI }}" target="_blank">{{ model.venue.name }}</a></em></div>
