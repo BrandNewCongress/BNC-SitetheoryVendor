@@ -55,7 +55,7 @@
                     <div class="time">{{ model.startTime | date: 'MMM d @ h:mm a' : model.timeZoneOffset }} - <span ng-if="(model.startTime | date: 'MMM d') != (model.endTime | date: 'MMM d')" class="newDay" >{{ model.endTime | date: 'MMM d' : model.timeZoneOffset }}</span> {{ model.endTime | date : 'h:mm a' : model.timeZoneOffset }}</div>
                 </div>
                 <div class="location" class="stGrid column40">
-                    <div class="locationName"><em><a ng-href="https://www.google.com/maps/place/{{ model.venue.address.address1 + ', ' + model.venue.address.city + ', ' + model.venue.address.state + ', ' + model.venue.address.zip |url_encode|replace({'%20': '+'}) }}" target="_blank">{{ model.venue.name }}</a></em></div>
+                    <div class="locationName"><em><a ng-href="https://www.google.com/maps/place/{{ (model.venue.address.address1 + ', ' + model.venue.address.city + ', ' + model.venue.address.state + ', ' + model.venue.address.zip) }}" target="_blank">{{ model.venue.name }}</a></em></div>
                     <div class="locationAddress">{{ model.venue.address.address1 }}</div>
                     <div class="locationAddress locationAddress2" ng-if="model.venue.address.address2">{{ model.venue.address.address2 }}</div>
                     <div class="locationCity">{{ model.venue.address.city }} {{ model.venue.address.state }} {{ model.venue.address.zip }}</div>
