@@ -16,10 +16,6 @@
     Stratus.Modules.ngSanitize=true;
 
 
-    Stratus.Filters.EncodeURI = function() {
-        return window.encodeURI;
-    };
-
     // This Controller handles simple element binding
     // for a single scope to an API Object Reference.
     Stratus.Controllers.Api = ['$scope', '$element', '$http', '$attrs', '$window', '$interpolate', 'model', 'tracking', function ($scope, $element, $http, $attrs, $window, $interpolate, model, tracking) {
