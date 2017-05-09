@@ -51,6 +51,7 @@
             pattern: {
                 email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                 zip: /[a-zA-Z0-9 \-]{5,}/,
+                // TODO: make this more robust so that it's actually useful
                 phone: /^[0-9]{10,}$/
             },
             url: null, // required
