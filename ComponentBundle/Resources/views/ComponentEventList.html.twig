@@ -14,7 +14,7 @@
 
 {% block contentType %}
 
-    <div id="joinCall" class="fontSecondary">
+    <div id="events" class="fontSecondary">
 
         {% if content.version.text is not empty %}
             {# Allow Custom Text Above Form #}
@@ -26,16 +26,16 @@
         {% endif %}
 
 
-        <md-list id="callList" layout-padding="" ng-cloak="" ng-controller="Api"
-             options='{"url":"https://api.{{ environment.site.domainprimary }}","controller":"/events{% if content.version.subtitle is not empty %}?candidate={{ content.version.subtitle|url_encode|replace({'%20': '+'}) }}{% endif %}", "onLoad": "fetch"}'>
+        <md-list id="eventList" layout-padding="" ng-cloak="" ng-controller="Api"
+             options='{"url":"https://api.{{ environment.site.domainprimary }}","controller":"/events{% if content.version.subtitle is not empty %}?candidate={{ content.version.subtitle|replace({' ', ''})|url_encode }}{% endif %}", "onLoad": "fetch"}'>
             <!-- Header -->
-            <div id="callListHeader">
+            <div id="eventListHeader">
                 <div class="clearfix">
                     <div class="stGrid column15">&nbsp;</div>
                     <div class="stGrid column30"><h2>Event</h2></div>
                     <div class="stGrid column25"><h2>Location</h2></div>
                 </div>
-                <h2 hide-gt-xs="">Scheduled Calls</h2></div>
+            </div>
             <!-- Progress Bar -->
             {% verbatim %}
             <md-progress-linear ng-show="status == 'sending'"></md-progress-linear>

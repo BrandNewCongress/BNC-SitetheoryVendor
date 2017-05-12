@@ -10,8 +10,8 @@
 {% endblock mainColumnGutter %}
 
 {# Set Valid Candidates, based on Profile contentId. Only insert valid names based on valid IDS, to ensure that we aren't inserting stuff into the page #}
-{# TODO: Eventually we should do a lookup on the api to get the list of all valid profiles tagged as candidates #}
-{% set validCandidates = {35723: 'Cori Bush',35825: 'Paula Jean'} %}
+{# TODO: Eventually we should do a lookup on the api to get the list of all valid profiles tagged as candidates. Or we may want to start using the standard names #}
+{% set validCandidates = {35723: 'Cori Bush', 35825: 'Paula Jean'} %}
 {% set candidateReferrer = null %}
 {% if app.request.get('candidate') is not empty and validCandidates is defined and validCandidates[app.request.get('candidate')] is defined %}
     {% set candidateReferrer = validCandidates[app.request.get('candidate')] %}
