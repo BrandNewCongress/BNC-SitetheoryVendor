@@ -13,7 +13,7 @@
 {# TODO: eventually get this list automatically, and do this all in a controller #}
 
 {% block pageTitle %}
-    {% if content.data.candidateLast is not empty %}
+    {% if content.data.candidateLast is defined and content.data.candidateLast is not empty %}
         <h1 class="pageTitle candidateReferrer">Volunteer for {{ content.data.candidateLast.name }}'s Campaign!</h1>
     {% else %}
         {{ parent() }}
