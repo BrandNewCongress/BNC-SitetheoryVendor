@@ -42,13 +42,13 @@
                 };
                 this.setRefcode = function (options) {
                     options = !options ? {} : options;
-                    options.url = !options.url ? 'https://secure.actblue.com' : options.url;
+                    options.url = !options.url ? 'http' : options.url;
                     var links = document.querySelectorAll('[href^="' + options.url + '"]');
                     if (links.length > 0) {
                         var refCode = this.getRefcode();
                         for (var index = 0; index < links.length; index++) {
                             var link = links[index];
-                            link.href = link.href + '?refcode=' + refCode;
+                            link.href = Stratus.Internals.SetUrlParams({'refcode': refCode, 'foo': 'bar'}, link.href);
                         }
                     }
                 };
