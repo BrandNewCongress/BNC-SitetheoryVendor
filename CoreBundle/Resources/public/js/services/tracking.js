@@ -48,7 +48,7 @@
                         var refCode = this.getRefcode();
                         for (var index = 0; index < links.length; index++) {
                             var link = links[index];
-                            link.href = Stratus.Internals.SetUrlParams({'refcode': refCode, 'foo': 'bar'}, link.href);
+                            link.href = Stratus.Internals.SetUrlParams({'refcode': refCode}, link.href);
                         }
                     }
                 };
