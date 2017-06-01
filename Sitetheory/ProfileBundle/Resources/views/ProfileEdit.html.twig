@@ -1,0 +1,254 @@
+{% extends 'SitetheoryProfileBundle::ProfileEdit.html.twig' %}
+
+{% block editFormTabCustom %}
+    <md-tab label="custom">
+
+        <div class="inset">
+
+
+            <h2>About</h2>
+
+            <div class="inputRow">
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>Email</label>
+                    <input ng-model="model.data.version.custom.email" type="text">
+                </md-input-container>
+            </div>
+
+            <div class="inputRow">
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>Phone</label>
+                    <input ng-model="model.data.version.custom.phone" type="text">
+                </md-input-container>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>This should be the full state name, e.g. California</stratus-help>
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>State</label>
+                    <input ng-model="model.data.version.custom.state" type="text">
+                </md-input-container>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>This should be the short state code, e.g. CA</stratus-help>
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>State Abbreviation</label>
+                    <input ng-model="model.data.version.custom.stateAbbreviation" type="text">
+                </md-input-container>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>This should be the short code for the state district, e.g. 01</stratus-help>
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>District Code</label>
+                    <input ng-model="model.data.version.custom.districtCode" type="text">
+                </md-input-container>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>This should be the ordinal number for the state district, e.g. for district 01 we enter "1st"</stratus-help>
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>District Ordinal</label>
+                    <input ng-model="model.data.version.custom.districtOrdinal" type="text">
+                </md-input-container>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>This be how we refer to the office, e.g. "Representative" or "Senator"</stratus-help>
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>Office Label</label>
+                    <input ng-model="model.data.version.custom.officeLabel" type="text">
+                </md-input-container>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>This be how we refer to the office, e.g. "For United States Congress 2018"</stratus-help>
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>Running Label</label>
+                    <input ng-model="model.data.version.custom.runningLabel" type="text">
+                </md-input-container>
+            </div>
+
+
+
+
+            <h2>Social Media & Links</h2>
+
+            <div class="inputRow">
+                <stratus-help>Enter the Twitter username/handle (not the full URL).</stratus-help>
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>Twitter Handle</label>
+                    <input ng-model="model.data.version.custom.twitterName" type="text">
+                </md-input-container>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>Enter the Facebook username/handle (not the full URL).</stratus-help>
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>Facebook Handle</label>
+                    <input ng-model="model.data.version.custom.facebookName" type="text">
+                </md-input-container>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>Enter the Linked-In username/handle (not the full URL, just the "USERNAME" part at the end: linkedin.com/in/USERNAME).</stratus-help>
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>Linked-In Handle</label>
+                    <input ng-model="model.data.version.custom.linkedinName" type="text">
+                </md-input-container>
+            </div>
+
+            {#
+            <div class="inputRow">
+                <stratus-help>The full URL to the store, e.g. https://shop.brandnewcongress.org/collections/cori-bush</stratus-help>
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>Store URL</label>
+                    <input ng-model="model.data.version.custom.urlStore" type="text">
+                </md-input-container>
+            </div>
+            #}
+
+            <div class="inputRow">
+                <stratus-help>The URL to the local platform page (if one exists), e.g. /Candidates/Cori-Bush/Issues</stratus-help>
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>Local Platform</label>
+                    <input ng-model="model.data.version.custom.urlPlatform" type="text">
+                </md-input-container>
+            </div>
+
+
+
+
+            <h2>Design Preferences</h2>
+
+            <div class="inputRow">
+                <stratus-help>Specify whether the "Join" form that sits on top of the main Hero image, will align left or right so that it doesn't cover up the face.</stratus-help>
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>Join Form Alignment</label>
+                    <md-select ng-model="model.data.version.custom.classJoinFormAlign" type="text">
+                        <md-option value="left">Left</md-option>
+                        <md-option value="right">Right</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>The text that appears at the top of the join form. It should begin with "Join me to...", e.g. "Join me to elect a corruption-free congress."</stratus-help>
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>Join Form Header Text</label>
+                    <input ng-model="model.data.version.custom.joinHeader" type="text">
+                </md-input-container>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>The title that appears under the main hero image.</stratus-help>
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>Intro Title</label>
+                    <input ng-model="model.data.version.custom.introTitle" type="text">
+                </md-input-container>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>The text that appears under the main hero image and Intro Title.</stratus-help>
+                <h3><label>Intro Text</label></h3>
+                <md-input-container class="block" ng-show="model.completed">
+                    <textarea froala="froalaOptions" ng-model="model.data.version.custom.introText"></textarea>
+                </md-input-container>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>The short teaser bio that links to the full bio (should be about 2 sentences long). An ellipsis "..." is automatically added to the end of this string, so don't add final punctuation.</stratus-help>
+                <h3><label>Bio Teaser</label></h3>
+                <md-input-container class="block" ng-show="model.completed">
+                    <textarea froala="froalaOptions" ng-model="model.data.version.custom.bioTeaser"></textarea>
+                </md-input-container>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>This should be an unordered list of the candidate's top 5 issues (needs to be short enough to fit in a small box, so 5-15 words per item).</stratus-help>
+                <h3><label>Agenda List</label></h3>
+                <md-input-container class="block" ng-show="model.completed">
+                    <textarea froala="froalaOptions" ng-model="model.data.version.custom.agendaList"></textarea>
+                </md-input-container>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>This should be an unordered list of the 4 ways a person can get involved. Usually this includes links to "Register to Vote", "Find your Polling Place", "Voting Methods in Texas", "Host a Voter Registration Drive", etc. Each item should have links with target to open in a new window ("_blank").</stratus-help>
+                <h3><label>Get Involved List</label></h3>
+                <md-input-container class="block" ng-show="model.completed">
+                    <textarea froala="froalaOptions" ng-model="model.data.version.custom.involvedList"></textarea>
+                </md-input-container>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>The quote from the candidate (should be about 2-3 sentences long).</stratus-help>
+                <label>Quote</label>
+                <md-input-container class="block" ng-show="model.completed">
+                    <textarea froala="froalaOptions" ng-model="model.data.version.custom.bioTeaser"></textarea>
+                </md-input-container>
+            </div>
+
+
+
+
+            <h2>Technical</h2>
+
+            <div class="inputRow">
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>Candidate Slug</label>
+                    <input ng-model="model.data.version.custom.candidateSlug" type="text">
+                </md-input-container>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>Specify the join form's email subscriptions. By default they will subscribed to the candidate's subscription.</stratus-help>
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>Subscriptions</label>
+                    <md-select ng-model="model.data.version.custom.joinSubscriptions" multiple>
+                        <md-option value="brandnewcongress">Brand New Congress</md-option>
+                        <md-option value="justicedemocrats">Justice Democrats</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+
+
+
+            <h2>Images</h2>
+
+            <div class="inputRow">
+                <stratus-help>This is an image of of the state with a star indicating the district. It should be a transparent PNG at least 200px wide with 130-180px tall.</stratus-help>
+                <h3>State Outline Image</h3>
+                <stratus-media-selector ng-model="model.data.version.custom.imageStateOutline" ng-show="model.completed"></stratus-media-selector>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>This is the image that appears at the top of the candidate landing page. It should be 1200 x 647 pixels and there should be negative space positioned to the left or right so that a join form can sit on top of the image.</stratus-help>
+                <h3>Hero Image</h3>
+                <stratus-media-selector ng-model="model.data.version.custom.imageHero" ng-show="model.completed"></stratus-media-selector>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>This is the action image that appears in the module and should show the candidate doing something that looks congressional and/or community organizing. It should be a square image at least 400 x 400 pixels.</stratus-help>
+                <h3>Action Image</h3>
+                <stratus-media-selector ng-model="model.data.version.custom.imageAction" ng-show="model.completed"></stratus-media-selector>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>This is an image of a store product, e.g. t-shirt. It should be a square image at least 400 x 400 pixels.</stratus-help>
+                <h3>Store Image</h3>
+                <stratus-media-selector ng-model="model.data.version.custom.imageStore" ng-show="model.completed"></stratus-media-selector>
+            </div>
+
+            <div class="inputRow">
+                <stratus-help>This is an image that appears as a background behind the quote.</stratus-help>
+                <h3>Quote Background Image</h3>
+                <stratus-media-selector ng-model="model.data.version.custom.imageQuoteBackground" ng-show="model.completed"></stratus-media-selector>
+            </div>
+
+
+        </div>
+
+    </md-tab>
+{% endblock editFormTabCustom %}
+
