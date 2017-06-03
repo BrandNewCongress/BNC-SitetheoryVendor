@@ -27,6 +27,10 @@
         $scope.model = new model;
         $scope.tracking = new tracking;
 
+        // Wrappers
+        $scope.Stratus = Stratus;
+        $scope._ = _;
+
         var host = window.location.hostname.split('.').reverse();
         //var tld = host[1]+'.'+host[0];
 
