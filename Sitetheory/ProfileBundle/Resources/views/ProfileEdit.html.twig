@@ -9,20 +9,6 @@
             <h2>About</h2>
 
             <div class="inputRow">
-                <md-input-container class="block" ng-show="model.completed">
-                    <label>Email</label>
-                    <input ng-model="model.data.version.custom.email" type="text">
-                </md-input-container>
-            </div>
-
-            <div class="inputRow">
-                <md-input-container class="block" ng-show="model.completed">
-                    <label>Phone</label>
-                    <input ng-model="model.data.version.custom.phone" type="text">
-                </md-input-container>
-            </div>
-
-            <div class="inputRow">
                 <stratus-help>This should be the full state name, e.g. California</stratus-help>
                 <md-input-container class="block" ng-show="model.completed">
                     <label>State</label>
@@ -39,7 +25,7 @@
             </div>
 
             <div class="inputRow">
-                <stratus-help>This should be the short code for the state district, e.g. 01</stratus-help>
+                <stratus-help>This should be the short code for the state district, e.g. 01. If this is a senate seat, just enter the word "Senate".</stratus-help>
                 <md-input-container class="block" ng-show="model.completed">
                     <label>District Code</label>
                     <input ng-model="model.data.version.custom.districtCode" type="text">
@@ -47,7 +33,7 @@
             </div>
 
             <div class="inputRow">
-                <stratus-help>This should be the ordinal number for the state district, e.g. for district 01 we enter "1st"</stratus-help>
+                <stratus-help>This should be the ordinal number for the state district, e.g. for district 01 we enter "1st". If this is a senate seat, just enter the word "Senate".</stratus-help>
                 <md-input-container class="block" ng-show="model.completed">
                     <label>District Ordinal</label>
                     <input ng-model="model.data.version.custom.districtOrdinal" type="text">
@@ -194,12 +180,14 @@
 
             <h2>Technical</h2>
 
+            {#
             <div class="inputRow">
                 <md-input-container class="block" ng-show="model.completed">
                     <label>Candidate Slug</label>
                     <input ng-model="model.data.version.custom.candidateSlug" type="text">
                 </md-input-container>
             </div>
+            #}
 
             <div class="inputRow">
                 <stratus-help>Specify the join form's email subscriptions. By default they will subscribed to the candidate's subscription.</stratus-help>
@@ -211,7 +199,6 @@
                     </md-select>
                 </md-input-container>
             </div>
-k
 
 
             <h2>Images</h2>
