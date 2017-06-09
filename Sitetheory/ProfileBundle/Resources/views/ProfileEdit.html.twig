@@ -137,25 +137,25 @@
 
             <div class="inputRow">
                 <stratus-help>The text that appears under the main hero image and Intro Title.</stratus-help>
-                <h3><label>Intro Text</label></h3>
+                <label>Intro Text</label>
                 <md-input-container class="block" ng-show="model.completed">
-                    <textarea froala="froalaOptions" ng-model="model.data.version.custom.introText"></textarea>
+                    <textarea aria-label="Intro Text" froala="froalaOptions" ng-model="model.data.version.custom.introText"></textarea>
                 </md-input-container>
             </div>
 
             <div class="inputRow">
                 <stratus-help>The short teaser bio that links to the full bio (should be about 2 sentences long). An ellipsis "..." is automatically added to the end of this string, so don't add final punctuation.</stratus-help>
-                <h3><label>Bio Teaser</label></h3>
+                <label>Bio Teaser</label>
                 <md-input-container class="block" ng-show="model.completed">
-                    <textarea froala="froalaOptions" ng-model="model.data.version.custom.bioTeaser"></textarea>
+                    <textarea aria-label="Bio Teaser" froala="froalaOptions" ng-model="model.data.version.custom.bioTeaser"></textarea>
                 </md-input-container>
             </div>
 
             <div class="inputRow">
                 <stratus-help>This should be an unordered list of the candidate's top 5 issues (needs to be short enough to fit in a small box, so 5-15 words per item).</stratus-help>
-                <h3><label>Agenda List</label></h3>
+                <label>Agenda List</label>
                 <md-input-container class="block" ng-show="model.completed">
-                    <textarea froala="froalaOptions" ng-model="model.data.version.custom.agendaList"></textarea>
+                    <textarea aria-label="Agenda List" froala="froalaOptions" ng-model="model.data.version.custom.agendaList"></textarea>
                 </md-input-container>
             </div>
 
@@ -163,7 +163,7 @@
                 <stratus-help>This should be an unordered list of the 4 ways a person can get involved. Usually this includes links to "Register to Vote", "Find your Polling Place", "Voting Methods in Texas", "Host a Voter Registration Drive", etc. Each item should have links with target to open in a new window ("_blank").</stratus-help>
                 <h3><label>Get Involved List</label></h3>
                 <md-input-container class="block" ng-show="model.completed">
-                    <textarea froala="froalaOptions" ng-model="model.data.version.custom.involvedList"></textarea>
+                    <textarea aria-label="Get Involved List" froala="froalaOptions" ng-model="model.data.version.custom.involvedList"></textarea>
                 </md-input-container>
             </div>
 
@@ -171,7 +171,7 @@
                 <stratus-help>The quote from the candidate (should be about 2-3 sentences long).</stratus-help>
                 <label>Quote</label>
                 <md-input-container class="block" ng-show="model.completed">
-                    <textarea froala="froalaOptions" ng-model="model.data.version.custom.quote"></textarea>
+                    <textarea aria-label="Quote" froala="froalaOptions" ng-model="model.data.version.custom.quote"></textarea>
                 </md-input-container>
             </div>
 
