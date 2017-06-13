@@ -181,15 +181,15 @@
             <h2>Technical</h2>
 
 
-            {#
+
             <div class="inputRow">
-                <stratus-help>Do not add anything here unless you need the candidate slug to be different than their name. Normally we will just replace the spaces with a dash and remove periods, to automatically create a slug.</stratus-help>
+                <stratus-help>Do not add anything here unless you need the candidate slug to be different than their name. By default we will automatically create a slug from their name, by replacing the spaces with a dash and removing periods.</stratus-help>
                 <md-input-container class="block" ng-show="model.completed">
                     <label>Candidate Slug</label>
                     <input ng-model="model.data.version.custom.candidateSlug" type="text">
                 </md-input-container>
             </div>
-            #}
+
 
 
             <div class="inputRow">
