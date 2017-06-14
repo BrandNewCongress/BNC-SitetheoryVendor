@@ -63,7 +63,7 @@
 {% block contentType %}
 
 
-    <div id="contentProfile-{{ content.id }}" class="contentProfile profileDetails" {{ block('editableContent') }}>
+    <div id="contentProfile-{{ content.id }}" class="contentProfile profileDetails" {{ contentEditable(content) }}>
 
         <div class="clearfix">
 

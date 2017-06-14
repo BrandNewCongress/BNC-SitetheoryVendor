@@ -68,12 +68,8 @@
                     <div class="clearfix">
                         <div id="candidateHeaderLeft" class="stGrid column20">
                             <p class="smallLabel purpleText">
-                                <span ng-bind-html="model.data.version.custom.state"></span>
-                                <span ng-bind-html="model.data.version.custom.districtOrdinal"></span>
-                                {#
-                                <span stratus-edit ng-model="model" property="version.custom.state"></span>
-                                <span stratus-edit ng-model="model" property="version.custom.districtOrdinal"></span>
-                                #}
+                                <span {{ editable() }} property="version.custom.state">{% verbatim %}{{ model.data.version.custom.state }}{% endverbatim %}</span>
+                                <span {{ editable() }} property="version.custom.districtOrdinal">{% verbatim %}{{ model.data.version.custom.districtOrdinal }}{% endverbatim %}</span>
                             </p>
                             <div class="stateOutline positionAnchor">
                                 <div class="stateOutline positionAnchor"><img id="stateOutline" ng-if="model.data.version.custom.imageStateOutline.length" stratus-src="{% verbatim %}{{ model.data.version.custom.imageStateOutline[0].url }}{% endverbatim %}">
@@ -81,12 +77,8 @@
                             </div>
                         </div>
                         <div class="stGrid column60">
-                            <h1 class="fontTertiary" ng-bind-html="model.data.version.title"></h1>
-                            <h4 class="pageSubTitle" ng-bind-html="model.data.version.custom.runningLabel"></h4>
-                            {#
-                            <h1 class="fontTertiary" stratus-edit ng-model="model" property="version.title"></h1>
-                            <h4 class="pageSubTitle" stratus-edit ng-model="model" property="version.custom.runningLabel"></h4>
-                            #}
+                            <h1 class="fontTertiary" {{ editable() }} property="version.title"></h1>
+                            <h4 class="pageSubTitle" {{ editable() }} property="version.custom.runningLabel"></h4>
                         </div>
                         <div id="candidateHeaderRight" class="stGrid column20">
                             <div class="socialMedia basicStyle clearfix">
@@ -131,8 +123,7 @@
                     <div class="join_container clearfix">
                         <a name="joinForm"></a>
                         <h2 class="fontTertiary">Sign Up!</h2>
-                        <p ng-bind-html="model.data.version.custom.joinHeader"></p>
-                        {# <p stratus-edit ng-model="model" property="version.custom.joinHeader"></p> #}
+                        <p {{ editable() }} property="version.custom.joinHeader"></p>
 
                         {# Customized with Angular Options above #}
                         {{ block('registrationForm') }}
@@ -143,26 +134,8 @@
 
 
             <div id="welcome">
-                <h2 class="fontPrimary" id="welcomeTitle" ng-bind-html="model.data.version.custom.introTitle"></h2>
-                {#
-                <h2 class="fontPrimary" id="welcomeTitle" stratus-edit ng-model="model" property="version.custom.introTitle"></h2>
-                #}
-                <div class="bodyLarge fontSecondary" id="welcomeText" ng-bind-html="model.data.version.custom.introText"></div>
-                {# TODO: THE EDITOR MAY NOT YET WORK IN LIVE EDIT + ANGULAR MODEL #}
-                {#
-                {% if environment.mode == 'preview' %}
-                    <stratus-edit ng-cloak="true" ng-model="model" property="version.text">
-                        <stratus-edit-view>
-                            <div class="bodyLarge fontSecondary" id="welcomeText" ng-bind-html="model.data.version.custom.introText" ng-cloak="true" ng-class="{ liveEdit: Stratus.Environment.data.liveEdit }"></div>
-                        </stratus-edit-view>
-                        <stratus-edit-input>
-                            <textarea froala ng-cloak="true" ng-model="$parent.data.version.custom.introText" aria-label="Intro Text"></textarea>
-                        </stratus-edit-input>
-                    </stratus-edit>
-                {% elseif content.version.text is not empty %}
-                    <div class="bodyLarge fontSecondary" id="welcomeText" ng-bind-html="model.data.version.custom.introText"></div>
-                {% endif %}
-                #}
+                <h2 class="fontPrimary" id="welcomeTitle" {{ editable() }} property="version.custom.introTitle"></h2>
+                <div class="bodyLarge fontSecondary" id="welcomeText" {{ editable("Editor") }} property="version.custom.introText"></div>
             </div>
 
 
@@ -170,34 +143,38 @@
 
 
             <div ng-cloak="true" class="candidateExcerpts" id="excerptsRow1">
-                {% verbatim %}
+
                 <md-grid-list md-cols-gt-sm="3" md-cols-sm="2" md-cols-xs="1" md-gutter="8px" md-row-height="1:1">
+
                     <md-grid-tile class="salmon column1" md-colspan="1" md-rowspan="1">
                         <div class="excerptContainer">
-                            <h3>About <span ng-cloak="true">{{ model.data.version.title }}</span></h3>
-                            <p ng-bind-html="model.data.version.custom.bioTeaser+'&hellip;'"></p>
-                            <a class="btn fontTertiary" ng-href="/Candidates/{{ candidateSlug }}">More</a></div>
+                            {% verbatim %}<h3>About <span ng-cloak="true">{{ model.data.version.title }}</span></h3>{% endverbatim %}
+                            <p {{ editable("Editor") }} property="version.custom.bioTeaser" suffix="&hellip;"></p>
+                            {% verbatim %}<a class="btn fontTertiary" ng-href="/Candidates/{{ candidateSlug }}">More</a>{% endverbatim %}
+                        </div>
                     </md-grid-tile>
+                    {% verbatim %}
                     <md-grid-tile class="column2" md-colspan="1" md-rowspan="1"> <img id="imageAction" ng-if="model.data.version.custom.imageAction.length" stratus-src="{{ model.data.version.custom.imageAction[0].url }}" alt="{{ model.data.version.custom.imageAction[0].name }}"> </md-grid-tile>
+                    {% endverbatim %}
                     <md-grid-tile class="column3" md-colspan="1" md-colspan-sm="2" md-rowspan="1">
                         <div class="excerptContainer">
                             <h3>Fighting to</h3>
-                            <div class="fontBody" ng-bind-html="model.data.version.custom.agendaList"></div>
-                            <a class="btn fontTertiary" ng-href="{{ model.data.version.custom.urlPlatform || '/platform' }}">See Full Platform</a></div>
+                            <div class="fontBody" {{ editable("Editor") }} property="version.custom.agendaList"></div>
+                            {% verbatim %}<a class="btn fontTertiary" ng-href="{{ model.data.version.custom.urlPlatform || '/platform' }}">See Full Platform</a></div>{% endverbatim %}
                     </md-grid-tile>
                 </md-grid-list>
-                {% endverbatim %}
             </div>
 
 
             <div ng-cloak="true" class="candidateExcerpts clearfix" id="excerptsRow2">
-                {% verbatim %}
+
                 <div class="stGrid column33 column1">
                     <div class="excerptContainer linkList">
                         <h3>How to Vote</h3>
-                        <div class="listUnstyled fontBody" ng-bind-html="model.data.version.custom.involvedList"></div>
+                        <div class="listUnstyled fontBody" {{ editable("Editor") }} property="version.custom.involvedList"></div>
                     </div>
                 </div>
+                {% verbatim %}
                 <div class="stGrid column33 column2">
                     <div class="excerptContainer socialFeed">
                         <h3>Recent</h3>
@@ -277,11 +254,10 @@
 
             {% block TMPcandidateLandingQuote %}
                 <div ng-if="model.data.version.custom.quote.length" class="positionAnchor" id="candidateQuote">
-                    <div id="quoteImage" ng-if="model.data.version.custom.imageQuoteBackground.length"><img
-                                stratus-src="{% verbatim %}{{ model.data.version.custom.imageQuoteBackground[0].url }}{% endverbatim %}">
+                    <div id="quoteImage" ng-if="model.data.version.custom.imageQuoteBackground.length"><img stratus-src="{% verbatim %}{{ model.data.version.custom.imageQuoteBackground[0].url }}{% endverbatim %}">
                     </div>
                     <div class="verticalCenter" id="quote">
-                        <div class="bodyLarge fontSecondary" ng-bind-html="model.data.version.custom.quote"></div>
+                        <div class="bodyLarge fontSecondary" {{ editable("Editor") }} property="version.custom.quote"></div>
                     </div>
                 </div>
             {% endblock TMPcandidateLandingQuote %}
