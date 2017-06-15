@@ -317,22 +317,23 @@
             <div class="sectionBorder backgroundDark"></div>
 
             <div id="candidateContact" class="clearfix fontSecondary">
-                {% verbatim %}
+
                         <h2 class="fontTertiary">Contact</h2>
                         <span class="candidatePhone" ng-if="model.data.version.meta.phones.length">
-                            <span ng-repeat="phone in model.data.version.meta.phones"><span ng-if="model.data.version.meta.phones.length > 1">{{ phone.name }}: </span>{{ phone.value }}</span>
+                            <span ng-repeat="phone in model.data.version.meta.phones"><span  ng-if="model.data.version.meta.phones.length > 1">{% verbatim %}{{ phone.name }}{% endverbatim %}: </span><span {{ editable() }}>{% verbatim %}{{ phone.value }}{% endverbatim %}</span></span>
                         </span>
 
                         <br hide-gt-sm>
 
                         <span ng-if="model.data.version.meta.phones.length && model.data.version.meta.emails.length" hide-xs hide-sm class="delimiter">|</span>
-
+                        {% verbatim %}
                         <span ng-if="model.data.version.meta.emails.length">
                             General: <a ng-href="mailto:{{ model.data.version.meta.emails[0].value}}">{{ model.data.version.meta.emails[0].value }}</a><span hide-xs hide-sm class="delimiter">|</span>
                             <br hide-gt-sm>
                             Press: <a href="mailto:press{{ model.data.version.meta.emails[0].value }}">press+{{ model.data.version.meta.emails[0].value }}</a>
                         </span>
                         {% endverbatim %}
+
             </div>
         </div>
         {% endblock TMPcandidateContact %}

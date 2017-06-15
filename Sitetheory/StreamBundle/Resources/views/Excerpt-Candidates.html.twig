@@ -76,7 +76,7 @@ SETTINGS
 {% endblock contentType %}
 
 {% block listItem %}
-    <div ng-class="{clearfix: $odd}" ng-repeat="model in collection.models">
+    <div ng-class="{clearfix: $odd}" ng-repeat="model in collection.models" ng-sanitize="true">
         <div class="gridColumn">
             <div class="profileContainer">
                 <div class="profileItem" >
