@@ -68,8 +68,8 @@
                     <div class="clearfix">
                         <div id="candidateHeaderLeft" class="stGrid column20">
                             <p class="smallLabel purpleText">
-                                <span {{ editable() }} property="version.custom.state">{% verbatim %}{{ model.data.version.custom.state }}{% endverbatim %}</span>
-                                <span {{ editable() }} property="version.custom.districtOrdinal">{% verbatim %}{{ model.data.version.custom.districtOrdinal }}{% endverbatim %}</span>
+                                <span {{ editable() }} property="version.custom.state" ng-cloak>{% verbatim %}{{ model.data.version.custom.state }}{% endverbatim %}</span>
+                                <span {{ editable() }} property="version.custom.districtOrdinal" ng-cloak>{% verbatim %}{{ model.data.version.custom.districtOrdinal }}{% endverbatim %}</span>
                             </p>
                             <div class="stateOutline positionAnchor">
                                 <div class="stateOutline positionAnchor"><img id="stateOutline" ng-if="model.data.version.custom.imageStateOutline.length" stratus-src="{% verbatim %}{{ model.data.version.custom.imageStateOutline[0].url }}{% endverbatim %}">
@@ -77,8 +77,8 @@
                             </div>
                         </div>
                         <div class="stGrid column60">
-                            <h1 class="fontTertiary" {{ editable() }} property="version.title"></h1>
-                            <h4 class="pageSubTitle" {{ editable() }} property="version.custom.runningLabel"></h4>
+                            <h1 class="fontTertiary" {{ editable() }} property="version.title" ng-cloak>{% verbatim %}{{ model.data.version.title }}{% endverbatim %}</h1>
+                            <h4 class="pageSubTitle" {{ editable() }} property="version.custom.runningLabel" ng-cloak>{% verbatim %}{{ model.data.version.custom.runningLabel }}{% endverbatim %}</h4>
                         </div>
                         <div id="candidateHeaderRight" class="stGrid column20">
                             <div class="socialMedia basicStyle clearfix">
@@ -123,7 +123,7 @@
                     <div class="join_container clearfix">
                         <a name="joinForm"></a>
                         <h2 class="fontTertiary">Sign Up!</h2>
-                        <p {{ editable() }} property="version.custom.joinHeader"></p>
+                        <p {{ editable() }} property="version.custom.joinHeader" ng-cloak>{% verbatim %}{{ model.data.version.custom.joinHeader }}{% endverbatim %}</p>
 
                         {# Customized with Angular Options above #}
                         {{ block('registrationForm') }}
@@ -134,8 +134,11 @@
 
 
             <div id="welcome">
-                <h2 class="fontPrimary" id="welcomeTitle" {{ editable() }} property="version.custom.introTitle"></h2>
+                <h2 class="fontPrimary" id="welcomeTitle" {{ editable() }} property="version.custom.introTitle" ng-cloak>{% verbatim %}{{ model.data.version.custom.introTitle }}{% endverbatim %}</h2>
+                {#
                 <div class="bodyLarge fontSecondary" id="welcomeText" {{ editable("Editor") }} property="version.custom.introText"></div>
+                #}
+                <div class="bodyLarge fontSecondary" id="welcomeText" ng-bind-html="model.data.version.custom.introText"></div>
             </div>
 
 
@@ -149,7 +152,10 @@
                     <md-grid-tile class="salmon column1" md-colspan="1" md-rowspan="1">
                         <div class="excerptContainer">
                             {% verbatim %}<h3>About <span ng-cloak="true">{{ model.data.version.title }}</span></h3>{% endverbatim %}
-                            <p {{ editable("Editor") }} property="version.custom.bioTeaser" suffix="&hellip;"></p>
+                            {#
+                            <p {{ editable("Editor") }} property="version.custom.bioTeaser" suffix="&hellip;" ng-cloak></p>
+                            #}
+                            <p ng-bind-html="model.data.version.custom.bioTeaser+'&hellip;'" ng-cloak></p>
                             {% verbatim %}<a class="btn fontTertiary" ng-href="/Candidates/{{ candidateSlug }}">More</a>{% endverbatim %}
                         </div>
                     </md-grid-tile>
@@ -159,7 +165,10 @@
                     <md-grid-tile class="column3" md-colspan="1" md-colspan-sm="2" md-rowspan="1">
                         <div class="excerptContainer">
                             <h3>Fighting to</h3>
+                            {#
                             <div class="fontBody" {{ editable("Editor") }} property="version.custom.agendaList"></div>
+                            #}
+                            <div class="fontBody" ng-bind-html="model.data.version.custom.agendaList"></div>
                             {% verbatim %}<a class="btn fontTertiary" ng-href="{{ model.data.version.custom.urlPlatform || '/platform' }}">See Full Platform</a></div>{% endverbatim %}
                     </md-grid-tile>
                 </md-grid-list>
