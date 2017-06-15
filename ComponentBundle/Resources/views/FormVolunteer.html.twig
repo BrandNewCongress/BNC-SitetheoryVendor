@@ -13,7 +13,8 @@
 {# TODO: eventually get this list automatically, and do this all in a controller #}
 
 {% block pageTitle %}
-    {% if content.data.candidateLast is defined and content.data.candidateLast.name is not empty %}
+    {# TODO: we actually only want to show the candidate name when requested DIRECTLY from the volunteer button on their profile page. So for security we can check that against their candidateLast cookie which is set on the CandidateLanding #}
+    {% if content.data.candidateLast is defined and content.data.candidateLast.name is not empty and app.request.get('candidate') is not empty and app.request.get('candidate') == content.data.candidateLast.slug %}
         <h1 class="pageTitle candidateReferrer">Volunteer for {{ content.data.candidateLast.name }}'s Campaign!</h1>
     {% else %}
         {{ parent() }}

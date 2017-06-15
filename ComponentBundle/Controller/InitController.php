@@ -12,9 +12,4 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class InitController extends Controller
 {
-
-    public function indexAction(Request $request, $controller, $options = [])
-    {
-
-    }
 }
