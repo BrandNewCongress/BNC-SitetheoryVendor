@@ -180,7 +180,10 @@
                 <div class="stGrid column33 column1">
                     <div class="excerptContainer linkList">
                         <h3>How to Vote</h3>
+                        {#
                         <div class="listUnstyled fontBody" {{ editable("Editor") }} property="version.custom.involvedList"></div>
+                        #}
+                        <div class="listUnstyled fontBody" ng-bind-html="model.data.version.custom.involvedList"></div>
                     </div>
                 </div>
                 {% verbatim %}
@@ -266,7 +269,10 @@
                     <div id="quoteImage" ng-if="model.data.version.custom.imageQuoteBackground.length"><img stratus-src="{% verbatim %}{{ model.data.version.custom.imageQuoteBackground[0].url }}{% endverbatim %}">
                     </div>
                     <div class="verticalCenter" id="quote">
+                        {#
                         <div class="bodyLarge fontSecondary" {{ editable("Editor") }} property="version.custom.quote"></div>
+                        #}
+                        <div class="bodyLarge fontSecondary" ng-bind-html="model.data.version.custom.quote"></div>
                     </div>
                 </div>
             {% endblock TMPcandidateLandingQuote %}
