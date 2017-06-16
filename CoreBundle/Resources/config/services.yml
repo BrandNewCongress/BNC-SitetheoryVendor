@@ -1,4 +1,11 @@
 services:
-#    bnc_core.example:
-#        class: BNC\CoreBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+
+    ##########################################
+    # BNC HELPERS
+    ##########################################
+
+    bnc_core.candidate_helper:
+        class: BNC\CoreBundle\Service\CandidateHelper
+        #arguments:
+        #    - "@service_container"
+        #    - "@sitetheory_core.env"
