@@ -19,9 +19,10 @@
 {% set candidateUrl = content.version.meta.urls|length ? content.version.meta.urls[0].value : ''  %}
 {% set donateUrl = candidateUrl ~ '/donate' %}
 {% set storeUrl = candidateUrl|length ? candidateUrl ~ '/store' : 'https://shop.brandnewcongress.org' %}
-{% set candidateSlug = content.version.custom.candidateSlug ?? content.version.title | replace({' ': '-', '.': ''})  %}
+{% set candidateSlug = content.version.custom.candidateSlug is defined and content.version.custom.candidateSlug is not empty ? content.version.custom.candidateSlug : content.version.title | replace({' ': '-', '.': ''})  %}
 {# set the candidate and subscriptions on the signup form #}
 {% set joinSubscriptions = content.version.custom.joinSubscriptions|length ? (content.version.custom.joinSubscriptions | join(',')) : '' %}
+
 
 
 {% block registrationFormDisclaimerExtra %}
@@ -61,7 +62,6 @@
 #}
 
 {% block contentType %}
-
 
     <div id="contentProfile-{{ content.id }}" class="contentProfile profileDetails" {{ contentEditable(content) }}>
 
