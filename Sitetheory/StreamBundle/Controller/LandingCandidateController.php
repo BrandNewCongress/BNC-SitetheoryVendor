@@ -38,7 +38,6 @@ class LandingCandidateController extends LandingController
         $candidateHelper = $controller->container->get('bnc_core.candidate_helper');
         $candidateHelper->setCandidateTracking($request, $controller);
 
-
         parent::indexAction($request, $controller);
     }
 
