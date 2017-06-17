@@ -22,7 +22,13 @@
     {% dump(app.request.get('candidate')) %}
     {% dump(content.data.candidateLast) %}
     {% if candidate is defined %}
-        <h1 class="pageTitle candidateReferrer">Volunteer for {{ candidate.name }}'s Campaign!</h1>
+        <div class="siteMaxWidth siteSidePadding">
+            <h1 class="pageTitle candidateReferrer">
+                <span class="starLeft">
+                    <span class="starRight">Volunteer for {{ candidate.name }}'s Campaign!</span>
+                </span>
+            </h1>
+        </div>
     {% else %}
         {{ parent() }}
     {% endif %}
