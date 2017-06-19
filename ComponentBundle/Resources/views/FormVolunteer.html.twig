@@ -19,8 +19,6 @@
 
 {% block pageTitle %}
     {# TODO: we actually only want to show the candidate name when requested DIRECTLY from the volunteer button on their profile page. So for security we can check that against their candidateLast cookie which is set on the CandidateLanding #}
-    {% dump(app.request.get('candidate')) %}
-    {% dump(content.data.candidateLast) %}
     {% if candidate is defined %}
         <div class="siteMaxWidth siteSidePadding">
             <h1 class="pageTitle candidateReferrer">
