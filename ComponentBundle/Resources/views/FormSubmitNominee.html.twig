@@ -154,6 +154,10 @@ But it's not being used ATM because we haven't decided now to manage forms betwe
                                     <md-checkbox name="nominatorPersonal" ng-model="model.data.nominatorPersonal" ng-value="1">{{ nominatorPronoun }} know{% if nominatorPerson == 2 %}s{% endif %} this nominee personally.</md-checkbox>
                                 </md-input-container>
 
+                                <md-input-container>
+                                    <md-checkbox name="alreadyRunning" ng-model="model.data.alreadyRunning">This person has already decided to run for office.</md-checkbox>
+                                </md-input-container>
+
                             </div>
                         </div>
 
@@ -251,6 +255,10 @@ But it's not being used ATM because we haven't decided now to manage forms betwe
 
                                 <md-input-container>
                                     <md-checkbox name="nominatorPersonal" ng-model="model.data.nominatorPersonal" ng-value="1">{{ nominatorPronoun }} know{% if nominatorPerson == 2 %}s{% endif %} this nominee personally.</md-checkbox>
+                                </md-input-container>
+
+                                <md-input-container>
+                                    <md-checkbox name="alreadyRunning" ng-model="model.data.alreadyRunning">This person has already decided to run for office.</md-checkbox>
                                 </md-input-container>
 
                             </div>
