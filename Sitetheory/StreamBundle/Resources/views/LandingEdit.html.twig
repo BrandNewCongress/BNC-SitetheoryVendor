@@ -1,0 +1,22 @@
+{% extends 'SitetheoryStreamBundle::LandingEdit.html.twig' %}
+
+{% block editFormTabCustom %}
+    <md-tab label="custom">
+
+        <div class="inset">
+
+            <h2>About</h2>
+
+            <div class="inputRow">
+                <stratus-help>This is who has legally paid for this particular campaign.</stratus-help>
+                <md-input-container class="block" ng-show="model.completed">
+                    <label>Paid For By</label>
+                    <input ng-model="model.data.version.custom.paidFor" type="text">
+                </md-input-container>
+            </div>
+
+        </div>
+
+    </md-tab>
+{% endblock editFormTabCustom %}
+
