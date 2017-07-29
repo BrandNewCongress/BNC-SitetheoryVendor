@@ -98,7 +98,7 @@
                             </div>
                             {# This uses the first URL in the list for the main domain: #}
                             {% verbatim %}
-                            <div class="candidateHeaderContribute clearfix"><a class="btn btnContribute" ng-href="{{ urlDonate }}" target="_blank">Support <span ng-cloak="true">{{ candidateFirstName }}</span></a></div>
+                            <div class="candidateHeaderContribute clearfix"><a class="btn btnContribute" ng-href="{{ urlDonate }}" target="_blank">Donate to <span ng-cloak="true">{{ candidateFirstName }}</span></a></div>
                             {% endverbatim %}
                         </div>
                     </div>
@@ -260,7 +260,7 @@
 
 
             {% verbatim %}
-            <div ng-cloak="true" hide-gt-sm class="mobileDonate"><a class="btn btnSalmon btnDonate" ng-href="{{ urlDonate }}" target="_blank">Support {{ model.data.version.title }}</a></div>
+            <div ng-cloak="true" hide-gt-sm class="mobileDonate"><a class="btn btnSalmon btnDonate" ng-href="{{ urlDonate }}" target="_blank">Donate to {{ model.data.version.title }}</a></div>
             {% endverbatim %}
 
 
