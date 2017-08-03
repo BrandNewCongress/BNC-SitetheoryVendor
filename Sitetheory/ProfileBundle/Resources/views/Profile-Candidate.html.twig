@@ -152,7 +152,7 @@
             <div class="stGrid column50">
                 <div class="candidateCallToAction">
                     <h3 class="fontSecondary salmonText">Already Signed Up?</h3>
-                    <p>It will take millions of dollars and thousands of volunteers to elect a Brand New Congress. Your dollars and your minutes matter!
+                    <p>It will take millions of dollars and thousands of volunteers to elect a {{ environment.site.id == '31' ? 'congress full of Justice Democrats' : 'Brand New Congress' }}. Your dollars and your minutes matter!
                     </p>
                     <div class="candidateActionBtns">
                         <a class="btn btnSalmon" href="/volunteer?candidate={{ candidateSlug}}">Volunteer</a>
