@@ -35,9 +35,14 @@
                     return value
                 };
                 this.getRefcode = function () {
+                    var recruiterCode = window.location.href.match(/ref=[A-Za-z0-9]*/)[0];
+                    if (recruiterCode) {
+                        return recruiterCode.split('=')[1];
+                    }
+                    
                     var utmCampaign = this.getUTMCode('utmCampaign');
                     var utmSource = this.getUTMCode('utmSource');
-                    var utmMedium = this.getUTMCode('utmMedium');
+                    var utmMedium = this.getUTMCode('utmMedium'); 
                     return (utmCampaign ? (utmCampaign + "/") : "") + (utmSource ? utmSource : "") + (utmMedium ? ("/" + utmMedium) : "");
                 };
                 this.setRefcode = function (options) {
