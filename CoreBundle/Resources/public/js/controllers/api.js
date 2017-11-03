@@ -152,6 +152,7 @@
             {"value": "VT", "text": "Vermont"},
             {"value": "VA", "text": "Virginia"},
             {"value": "WA", "text": "Washington"},
+            {"value": "DC", "text": "Washington D.C."},
             {"value": "WV", "text": "West Virginia"},
             {"value": "WI", "text": "Wisconsin"},
             {"value": "WY", "text": "Wyoming"}
