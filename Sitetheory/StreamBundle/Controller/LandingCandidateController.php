@@ -2,26 +2,22 @@
 
 namespace Sitetheory\StreamBundle\Controller;
 
-use Sitetheory\StreamBundle\Controller\LandingController;
 use Symfony\Component\HttpFoundation\Request;
 use Sitetheory\CoreBundle\Controller\InitController;
 
 /**
- * Class LandingController
- * @package Sitetheory\StreamBundle\Controller
+ * Class LandingController.
  */
 class LandingCandidateController extends LandingController
 {
-
-
     /**
-     * Add custom functionality to the standard LandingController
-     * @param Request $request
+     * Add custom functionality to the standard LandingController.
+     *
+     * @param Request        $request
      * @param InitController $controller
      */
     public function indexAction(Request $request, InitController $controller)
     {
-
         /*
          * This works with the TemplateController which does this for specific parameter requests. This should overwrite.
          * Check if this is the first page someone visits on the site, e.g. someone came directly to
@@ -40,5 +36,4 @@ class LandingCandidateController extends LandingController
 
         parent::indexAction($request, $controller);
     }
-
 }
