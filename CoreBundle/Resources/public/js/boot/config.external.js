@@ -9,27 +9,30 @@
  *      <stratus-form-signup></stratus-form-signup>
  * @type {string}
  */
-var vendorBundle = 'bnccore/';
+
+/* global boot */
+
+var vendorBundle = 'bnccore/'
 var config = function (boot) {
-    // Deployment Customization for External Sites
-    boot.host = '//brandnewcongress.org';
-    boot.cdn = '//cdn.sitetheory.io/';
-    boot.relative = 'assets/1/0/bundles/';
-    boot.bundle = 'sitetheorystratus/';
-    return {
+  // Deployment Customization for External Sites
+  boot.host = '//brandnewcongress.org'
+  boot.cdn = '//cdn.sitetheory.io/'
+  boot.relative = 'assets/1/0/bundles/'
+  boot.bundle = 'sitetheorystratus/'
+  return {
 
-        /* Vendor Custom Controllers */
-        'stratus.services.tracking': vendorBundle + 'js/services/tracking' + boot.suffix,
+    /* Vendor Custom Controllers */
+    'stratus.services.tracking': vendorBundle + 'js/services/tracking' + boot.suffix,
 
-        /* Vendor Custom Controllers */
-        'stratus.controllers.api': vendorBundle + 'js/controllers/api' + boot.suffix,
+    /* Vendor Custom Controllers */
+    'stratus.controllers.api': vendorBundle + 'js/controllers/api' + boot.suffix,
 
-        /* Vendor Custom Components */
-        'stratus.components.formSignup': vendorBundle + 'js/components/formSignup' + boot.suffix,
-        'templates-form-signup': vendorBundle + 'js/components/formSignup.html'
-    };
-};
+    /* Vendor Custom Components */
+    'stratus.components.formSignup': vendorBundle + 'js/components/formSignup' + boot.suffix,
+    'templates-form-signup': vendorBundle + 'js/components/formSignup.html'
+  }
+}
 // Merge Config
-if(typeof boot === 'object' && boot && typeof boot.config === 'function') {
-    boot.config(config(boot));
+if (typeof boot === 'object' && boot && typeof boot.config === 'function') {
+  boot.config(config(boot))
 }
